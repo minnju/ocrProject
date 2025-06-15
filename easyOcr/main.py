@@ -7,10 +7,10 @@ import numpy as np
 def easyOcr(image_path):
 
     reader = easyocr.Reader(['ko', 'en'], gpu=True)  # GPU 사용시 더 빠름
-    image = cv2.imread('test.png')
+    image = cv2.imread(image_path)
     enhanced_image=enhance_image(image)
     # 손글씨 이미지 읽기
-    result = reader.readtext("test.png",
+    result = reader.readtext(enhanced_image,
                             detail=1,
                             paragraph=False,
                             min_size=10,      # 최소 텍스트 크기
@@ -22,7 +22,8 @@ def easyOcr(image_path):
 
     # 결과 출력
     for (bbox, text, confidence) in result:
-        print(f"텍스트: {text}, 신뢰도: {confidence:.2f}")
+        print(f"{text}")
+        #print("신뢰도: {confidence:.2f}")
 
     # 해상도 증가
 def enhance_image(image):
@@ -35,4 +36,8 @@ def enhance_image(image):
     
     return sharpened
 
-easyOcr("test.png")
+#easyOcr("test2.jpg")
+#easyOcr("writing_font_test.jpg")
+#easyOcr("computer_font_korean.png")
+#easyOcr("receipt.PNG")
+easyOcr("image/recipt_example.jpg")
