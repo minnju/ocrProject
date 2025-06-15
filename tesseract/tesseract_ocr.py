@@ -306,8 +306,8 @@ def smart_preprocessing(image_path, text_type='mixed', save_path=None):
 def basic_ocr(image_path):
     """기본 OCR 사용법"""
     # 이미지 로드
-    #image = Image.open(image_path)
-    image = handwriting_preprocessing(image_path, "image/enhanced_image.jpg")
+    image = Image.open(image_path)
+    #image = handwriting_preprocessing(image_path, "image/enhanced_image.jpg")
     
     
     # 텍스트 추출
@@ -462,13 +462,13 @@ def smart_ocr(image_path, lang='kor+eng'):
 # 8. 사용 예제
 if __name__ == "__main__":
     # 이미지 파일 경로 (실제 경로로 변경하세요)
-    image_path = "image/receipt.PNG"
+    image_path = "image/computer_font_korean.png"
     
     print("=== Tesseract OCR 테스트 ===\n")
     
     # 기본 OCR
-    basic_ocr(image_path)
-    print("\n" + "="*50 + "\n")
+    #basic_ocr(image_path)
+    #print("\n" + "="*50 + "\n")
     
     # 한국어 특화 OCR
     #korean_ocr(image_path)
@@ -487,4 +487,4 @@ if __name__ == "__main__":
     #print("\n" + "="*50 + "\n")
     
     # 실용적인 OCR
-    #smart_ocr(image_path)
+    smart_ocr(image_path)

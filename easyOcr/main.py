@@ -40,4 +40,5 @@ def enhance_image(image):
 #easyOcr("writing_font_test.jpg")
 #easyOcr("computer_font_korean.png")
 #easyOcr("receipt.PNG")
-easyOcr("image/recipt_example.jpg")
+#easyOcr("image/recipt_example.jpg")
+easyOcr("image/korean_font_image.png")
